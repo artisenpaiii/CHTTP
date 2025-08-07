@@ -10,10 +10,19 @@ std::string Logger::get_current_time() const {
 
 };
 
-void Logger::log_info(std::string& info) const {
-    std::cout << "[" << this->get_current_time() << "] - " << info << std::endl; 
+void Logger::log_info(std::string info) const {
+    std::cout << "[" << this->get_current_time() 
+              << "][INFO] - " << info << std::endl; 
 };
 
-void Logger::log_error(std::string& info) const {
-    std::cout << "[" << this->get_current_time() << "][ERROR] - " << info << std::endl; 
+void Logger::log_error(std::string info) const {
+    std::cout << "[" << this->get_current_time() << "][ERROR] - " 
+              << info << std::endl; 
 };
+
+void Logger::log_method(std::string method, std::string text) const {
+    std::cout << "[" << this->get_current_time() << "][" << method << "] - " 
+    << text << std::endl; 
+
+
+}
